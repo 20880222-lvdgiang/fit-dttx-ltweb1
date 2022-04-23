@@ -65,7 +65,7 @@ body{
 }
 
 .sub-menu{
-    position: absolute;
+    position: absolute; /*Tách ra làm 1 lớp layer phía trên*/
     margin-top: -25px;
     margin-left: 90px;
     visibility: hidden;
