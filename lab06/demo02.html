@@ -14,12 +14,12 @@
             console.log(text);
         }
 
-        get_h1_element();
+        get_h1_element(); /*Để javascript trước thẻ h1 có thể phát sinh lỗi do mã code chưa tìm thấy h1 khi chạy đến đây*/
     </script>
 
     <h1>Hello world</h1>
 
-    <script type="text/javascript">
+    <script type="text/javascript"> /*Khuyến cáo nên để javascript ở cuối cùng*/
         console.log('Call function get_h1_element second time');
         get_h1_element();
     </script>
