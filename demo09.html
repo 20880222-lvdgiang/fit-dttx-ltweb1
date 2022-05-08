@@ -15,34 +15,38 @@
     <div id="list"></div>
 
     <script type="text/javascript">
+        //Khai báo các sự kiện
        const btnAdd=document.getElementById('btnAdd') ;
        const btnRemove=document.getElementById('btnRemove');
        const btnRemoveAll=document.getElementById('btnRemoveAll');
        const list=document.querySelector('#list');
 
+       //Gán hàm javascript thực hiện các sự kiện add, remove, removeall
        btnAdd.addEventListener('click',add);
        btnRemove.addEventListener('click',remove);
        btnRemoveAll.addEventListener('click',removeall);
-       var i=1;
-
+       var i=1; //khai báo số thứ tự
+        
+       //Các hàm javascript
        function add(){
+           //cấu trúc cây DOM list > p_node > text_node
            let p_node=document.createElement('p');
            let text_node=document.createTextNode(i+'. Item');
            p_node.appendChild(text_node);
            list.appendChild(p_node);
-           i++;
+           i++; //Tăng số thứ tự
        }
 
        function remove(){
-           if(list.children.length>0){
+           if(list.children.length>0){  //Kiểm tra nếu còn node con thì mới xóa
             list.removeChild(list.lastChild);
-            i--;            
+            i--;    //Giảm số thứ tự        
            }           
        }
 
        function removeall(){
-           list.innerHTML="";
-           i=1;
+           list.innerHTML="";   //Để xóa hết thì gán tập rỗng hoặc dùng vòng lặp while xóa hết
+           i=1; //Đưa số thứ tự về lại ban đầu
        }
     </script>
 </body>
